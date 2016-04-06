@@ -244,7 +244,9 @@ int EnumDirectories(string Path)
 	{
 		if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 		{
-				_tprintf(TEXT("%s\n"), ffd.cFileName);
+			//string 
+			printf("%s\\", Path.c_str());
+			_tprintf(TEXT("%s\n"), ffd.cFileName);
 		}
 		else
 		{
