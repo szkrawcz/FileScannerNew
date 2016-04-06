@@ -147,7 +147,7 @@ int EnumFilesFromDirectory(string Path)
 	size_t length_of_arg;
 	HANDLE hFind = INVALID_HANDLE_VALUE;
 	DWORD dwError = 0;
-
+	
 	// If the directory is not specified as a command-line argument,
 	// print usage.
 
