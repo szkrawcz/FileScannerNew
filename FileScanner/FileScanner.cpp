@@ -24,6 +24,7 @@ using namespace std;
 
 
 
+
 typedef long long long64;
 /**Don´t forget to use delete*/
 LPCWSTR convStringToLPCWSTR(string String)
@@ -52,6 +53,7 @@ BOOL GetLastWriteTime(HANDLE hFile, LPTSTR lpszString, DWORD dwSize)
 
 	// Convert the last-write time to local time.
 	FileTimeToSystemTime(&ftWrite, &stUTC);
+	//FileTimeToSystemTime(&ftAccess, &stUTC);
 	SystemTimeToTzSpecificLocalTime(NULL, &stUTC, &stLocal);
 
 	// Build a string showing the date and time.
@@ -107,6 +109,8 @@ int _tmain(int argc, TCHAR *argv[])
 	//const char* filep = "F:\\lib.zip";
 	ShowLastWriteTime("F:\lib.zip");
 	ShowLastWriteTime("F:\VC_RED.cab");
+	ShowLastWriteTime("F:\\honda\\08cbr1000rr_sm.pdf");
+	ShowLastWriteTime("F:\\honda\\08cbr1000rr_sm.pdf");
 	ShowLastWriteTime("F:\\honda\\08cbr1000rr_sm.pdf");
 	int a;
 	std::cin >> a;
