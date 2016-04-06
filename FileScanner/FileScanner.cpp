@@ -106,9 +106,8 @@ int  ShowLastWriteTime(string FileName)
 
 int _tmain(int argc, TCHAR *argv[])
 {
-	//const char* filep = "F:\\lib.zip";
-	ShowLastWriteTime("F:\lib.zip");
-	ShowLastWriteTime("F:\VC_RED.cab");
+	ShowLastWriteTime("F:\\lib.zip");
+	ShowLastWriteTime("F:\\VC_RED.cab");
 	ShowLastWriteTime("F:\\honda\\08cbr1000rr_sm.pdf");
 	ShowLastWriteTime("F:\\honda\\08cbr1000rr_sm.pdf");
 	ShowLastWriteTime("F:\\honda\\08cbr1000rr_sm.pdf");
