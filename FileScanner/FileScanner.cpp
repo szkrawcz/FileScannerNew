@@ -10,6 +10,7 @@
 #include <tchar.h> 
 #include <stdio.h>
 #include <strsafe.h>
+
 #pragma comment(lib, "User32.lib")
 
 using namespace std;
@@ -210,7 +211,8 @@ int EnumDirectories(string Path)
 	size_t length_of_arg;
 	HANDLE hFind = INVALID_HANDLE_VALUE;
 	DWORD dwError = 0;
-
+	string NextPath;
+	
 	// If the directory is not specified as a command-line argument,
 	// print usage.
 
@@ -245,14 +247,16 @@ int EnumDirectories(string Path)
 		if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 		{
 			//string 
-			printf("%s\\", Path.c_str());
+			NextPath += Path.c_str();
+			NextPath += "\\\\";// +Path.c_str();
+			NextPath += str(ffd.cFileName);
+			//printf("%s\n", NextPath.c_str());
+			printf("%s\\\\", Path.c_str());
 			_tprintf(TEXT("%s\n"), ffd.cFileName);
 		}
 		else
 		{
-			//filesize.LowPart = ffd.nFileSizeLow;
-			//filesize.HighPart = ffd.nFileSizeHigh;
-			//_tprintf(TEXT("  %s   %ld bytes\n"), ffd.cFileName, filesize.QuadPart);
+		//	 EnumFilesFromDirectory()
 		}
 	} while (FindNextFile(hFind, &ffd) != 0);
 
